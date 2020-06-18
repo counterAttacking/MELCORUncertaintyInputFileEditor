@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace MELCORUncertaintyInputFileEditor
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
         private void TsmiNewWindow_Click(object sender, EventArgs e)
         {
-            var frm = new Form1();
+            var frm = new MainForm();
             frm.Show();
         }
 
@@ -96,6 +96,7 @@ namespace MELCORUncertaintyInputFileEditor
                     Text = ReadFiles(item.SubItems[2].Text.ToString()),
                 };
                 tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(textBox);
+                tabControl1.SelectedTab = tabControl1.TabPages[tabControl1.TabPages.Count - 1];
             }
         }
 

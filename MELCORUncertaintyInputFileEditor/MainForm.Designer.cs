@@ -68,6 +68,7 @@
             this.mainFormRibbon.Tabs.Add(this.ribbonTabFile);
             this.mainFormRibbon.Tabs.Add(this.ribbonTabBuild);
             this.mainFormRibbon.TabSpacing = 4;
+            this.mainFormRibbon.ThemeColor = System.Windows.Forms.RibbonTheme.Halloween;
             // 
             // ribbonTabFile
             // 

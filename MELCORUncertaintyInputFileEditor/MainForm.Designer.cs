@@ -31,9 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainFormRibbon = new System.Windows.Forms.Ribbon();
             this.ribbonTabFile = new System.Windows.Forms.RibbonTab();
-            this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPnlOpen = new System.Windows.Forms.RibbonPanel();
             this.ribbonBtnOpenFolder = new System.Windows.Forms.RibbonButton();
             this.ribbonBtnOpenFile = new System.Windows.Forms.RibbonButton();
+            this.ribbonTabView = new System.Windows.Forms.RibbonTab();
+            this.ribbonTabBuild = new System.Windows.Forms.RibbonTab();
+            this.ribbonPnlExecute = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.dockPnlMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.vS2015DarkTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme();
             this.SuspendLayout();
@@ -63,20 +67,24 @@
             this.mainFormRibbon.Size = new System.Drawing.Size(784, 141);
             this.mainFormRibbon.TabIndex = 0;
             this.mainFormRibbon.Tabs.Add(this.ribbonTabFile);
+            this.mainFormRibbon.Tabs.Add(this.ribbonTabView);
+            this.mainFormRibbon.Tabs.Add(this.ribbonTabBuild);
             this.mainFormRibbon.TabSpacing = 4;
             // 
             // ribbonTabFile
             // 
             this.ribbonTabFile.Name = "ribbonTabFile";
-            this.ribbonTabFile.Panels.Add(this.ribbonPanel1);
+            this.ribbonTabFile.Panels.Add(this.ribbonPnlOpen);
             this.ribbonTabFile.Text = "File";
             // 
-            // ribbonPanel1
+            // ribbonPnlOpen
             // 
-            this.ribbonPanel1.Items.Add(this.ribbonBtnOpenFolder);
-            this.ribbonPanel1.Items.Add(this.ribbonBtnOpenFile);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Text = "Open";
+            this.ribbonPnlOpen.ButtonMoreEnabled = false;
+            this.ribbonPnlOpen.ButtonMoreVisible = false;
+            this.ribbonPnlOpen.Items.Add(this.ribbonBtnOpenFolder);
+            this.ribbonPnlOpen.Items.Add(this.ribbonBtnOpenFile);
+            this.ribbonPnlOpen.Name = "ribbonPnlOpen";
+            this.ribbonPnlOpen.Text = "Open";
             // 
             // ribbonBtnOpenFolder
             // 
@@ -98,6 +106,34 @@
             this.ribbonBtnOpenFile.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             this.ribbonBtnOpenFile.Click += new System.EventHandler(this.RibbonBtnOpenFile_Click);
             // 
+            // ribbonTabView
+            // 
+            this.ribbonTabView.Name = "ribbonTabView";
+            this.ribbonTabView.Text = "View";
+            // 
+            // ribbonTabBuild
+            // 
+            this.ribbonTabBuild.Name = "ribbonTabBuild";
+            this.ribbonTabBuild.Panels.Add(this.ribbonPnlExecute);
+            this.ribbonTabBuild.Text = "Build";
+            // 
+            // ribbonPnlExecute
+            // 
+            this.ribbonPnlExecute.ButtonMoreEnabled = false;
+            this.ribbonPnlExecute.ButtonMoreVisible = false;
+            this.ribbonPnlExecute.Items.Add(this.ribbonButton1);
+            this.ribbonPnlExecute.Name = "ribbonPnlExecute";
+            this.ribbonPnlExecute.Text = "Execute";
+            // 
+            // ribbonButton1
+            // 
+            this.ribbonButton1.Image = global::MELCORUncertaintyInputFileEditor.Properties.Resources.start_48;
+            this.ribbonButton1.LargeImage = global::MELCORUncertaintyInputFileEditor.Properties.Resources.start_48;
+            this.ribbonButton1.Name = "ribbonButton1";
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+            this.ribbonButton1.Text = "Run";
+            this.ribbonButton1.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            // 
             // dockPnlMain
             // 
             this.dockPnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,7 +146,7 @@
             this.dockPnlMain.TabIndex = 1;
             this.dockPnlMain.Theme = this.vS2015DarkTheme1;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,7 +156,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MELCOR Uncertainty Input File Editor";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -134,8 +170,12 @@
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPnlMain;
         private WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme vS2015DarkTheme1;
         private System.Windows.Forms.RibbonTab ribbonTabFile;
-        private System.Windows.Forms.RibbonPanel ribbonPanel1;
+        private System.Windows.Forms.RibbonPanel ribbonPnlOpen;
         private System.Windows.Forms.RibbonButton ribbonBtnOpenFolder;
         private System.Windows.Forms.RibbonButton ribbonBtnOpenFile;
+        private System.Windows.Forms.RibbonTab ribbonTabView;
+        private System.Windows.Forms.RibbonTab ribbonTabBuild;
+        private System.Windows.Forms.RibbonPanel ribbonPnlExecute;
+        private System.Windows.Forms.RibbonButton ribbonButton1;
     }
 }

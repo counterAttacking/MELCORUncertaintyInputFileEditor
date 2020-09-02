@@ -70,7 +70,9 @@ namespace MELCORUncertaintyInputFileEditor
 
         public void ViewSelectedFile(string selectedFile)
         {
-
+            var frmTextViewer = new TextViewerForm(selectedFile);
+            frmTextViewer.TabText = Path.GetFileName(selectedFile);
+            frmTextViewer.Show(this.dockPnlMain, DockState.Document);
         }
 
     }

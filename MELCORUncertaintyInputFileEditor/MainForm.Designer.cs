@@ -37,7 +37,7 @@
             this.ribbonTabView = new System.Windows.Forms.RibbonTab();
             this.ribbonTabBuild = new System.Windows.Forms.RibbonTab();
             this.ribbonPnlExecute = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
+            this.ribbonBtnRun = new System.Windows.Forms.RibbonButton();
             this.dockPnlMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.vS2015DarkTheme1 = new WeifenLuo.WinFormsUI.Docking.VS2015DarkTheme();
             this.SuspendLayout();
@@ -121,18 +121,19 @@
             // 
             this.ribbonPnlExecute.ButtonMoreEnabled = false;
             this.ribbonPnlExecute.ButtonMoreVisible = false;
-            this.ribbonPnlExecute.Items.Add(this.ribbonButton1);
+            this.ribbonPnlExecute.Items.Add(this.ribbonBtnRun);
             this.ribbonPnlExecute.Name = "ribbonPnlExecute";
             this.ribbonPnlExecute.Text = "Execute";
             // 
-            // ribbonButton1
+            // ribbonBtnRun
             // 
-            this.ribbonButton1.Image = global::MELCORUncertaintyInputFileEditor.Properties.Resources.start_48;
-            this.ribbonButton1.LargeImage = global::MELCORUncertaintyInputFileEditor.Properties.Resources.start_48;
-            this.ribbonButton1.Name = "ribbonButton1";
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Text = "Run";
-            this.ribbonButton1.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.ribbonBtnRun.Image = global::MELCORUncertaintyInputFileEditor.Properties.Resources.start_48;
+            this.ribbonBtnRun.LargeImage = global::MELCORUncertaintyInputFileEditor.Properties.Resources.start_48;
+            this.ribbonBtnRun.Name = "ribbonBtnRun";
+            this.ribbonBtnRun.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonBtnRun.SmallImage")));
+            this.ribbonBtnRun.Text = "Run";
+            this.ribbonBtnRun.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
+            this.ribbonBtnRun.Click += new System.EventHandler(this.RibbonBtnRun_Click);
             // 
             // dockPnlMain
             // 
@@ -176,6 +177,6 @@
         private System.Windows.Forms.RibbonTab ribbonTabView;
         private System.Windows.Forms.RibbonTab ribbonTabBuild;
         private System.Windows.Forms.RibbonPanel ribbonPnlExecute;
-        private System.Windows.Forms.RibbonButton ribbonButton1;
+        private System.Windows.Forms.RibbonButton ribbonBtnRun;
     }
 }

@@ -68,6 +68,11 @@ namespace MELCORUncertaintyInputFileEditor
             this.frmExplorer.AddDATFiles(datFiles);
         }
 
+        private void RibbonBtnRun_Click(object sender, EventArgs e)
+        {
+            this.frmExplorer.Run();
+        }
+
         public void ViewSelectedFile(string selectedFile)
         {
             var frmTextViewer = new TextViewerForm(selectedFile);

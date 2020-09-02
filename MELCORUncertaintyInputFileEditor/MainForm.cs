@@ -38,6 +38,35 @@ namespace MELCORUncertaintyInputFileEditor
             {
                 return;
             }
+
+            List<DATFile> datFiles = new List<DATFile>();
+            DirectoryInfo directoryInfo = new DirectoryInfo(openFolderDialog.FileName);
+            if (directoryInfo.GetDirectories().Length > 0)
+            {
+                foreach (var dir in directoryInfo.GetDirectories())
+                {
+                    this.DirFileSearch(dir.FullName);
+                }
+            }
+            foreach (FileInfo file in directoryInfo.GetFiles())
+            {
+                if (Path.GetExtension(file.Name).Equals(".dat"))
+                {
+                    try
+                    {
+                        var datFile = new DATFile();
+                        datFile.name = Path.GetFileName(file.Name);
+                        datFile.path = file.FullName;
+                        datFiles.Add(datFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+            }
+
+            this.frmExplorer.AddDATFiles(datFiles);
         }
 
         private void RibbonBtnOpenFile_Click(object sender, EventArgs e)
@@ -78,6 +107,35 @@ namespace MELCORUncertaintyInputFileEditor
             var frmTextViewer = new TextViewerForm(selectedFile);
             frmTextViewer.TabText = Path.GetFileName(selectedFile);
             frmTextViewer.Show(this.dockPnlMain, DockState.Document);
+        }
+
+        private void DirFileSearch(string dirPath)
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(dirPath);
+            foreach (var dir in Directory.GetDirectories(dirPath))
+            {
+                this.DirFileSearch(dir);
+            }
+
+            List<DATFile> datFiles = new List<DATFile>();
+            foreach (FileInfo file in directoryInfo.GetFiles())
+            {
+                if (Path.GetExtension(file.Name).Equals(".dat"))
+                {
+                    try
+                    {
+                        var datFile = new DATFile();
+                        datFile.name = Path.GetFileName(file.Name);
+                        datFile.path = file.FullName;
+                        datFiles.Add(datFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+            }
+            this.frmExplorer.AddDATFiles(datFiles);
         }
 
     }

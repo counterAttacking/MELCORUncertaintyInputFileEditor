@@ -34,7 +34,6 @@
             this.ribbonPnlOpen = new System.Windows.Forms.RibbonPanel();
             this.ribbonBtnOpenFolder = new System.Windows.Forms.RibbonButton();
             this.ribbonBtnOpenFile = new System.Windows.Forms.RibbonButton();
-            this.ribbonTabView = new System.Windows.Forms.RibbonTab();
             this.ribbonTabBuild = new System.Windows.Forms.RibbonTab();
             this.ribbonPnlExecute = new System.Windows.Forms.RibbonPanel();
             this.ribbonBtnRun = new System.Windows.Forms.RibbonButton();
@@ -67,7 +66,6 @@
             this.mainFormRibbon.Size = new System.Drawing.Size(784, 141);
             this.mainFormRibbon.TabIndex = 0;
             this.mainFormRibbon.Tabs.Add(this.ribbonTabFile);
-            this.mainFormRibbon.Tabs.Add(this.ribbonTabView);
             this.mainFormRibbon.Tabs.Add(this.ribbonTabBuild);
             this.mainFormRibbon.TabSpacing = 4;
             // 
@@ -105,11 +103,6 @@
             this.ribbonBtnOpenFile.Text = "File";
             this.ribbonBtnOpenFile.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Center;
             this.ribbonBtnOpenFile.Click += new System.EventHandler(this.RibbonBtnOpenFile_Click);
-            // 
-            // ribbonTabView
-            // 
-            this.ribbonTabView.Name = "ribbonTabView";
-            this.ribbonTabView.Text = "View";
             // 
             // ribbonTabBuild
             // 
@@ -174,7 +167,6 @@
         private System.Windows.Forms.RibbonPanel ribbonPnlOpen;
         private System.Windows.Forms.RibbonButton ribbonBtnOpenFolder;
         private System.Windows.Forms.RibbonButton ribbonBtnOpenFile;
-        private System.Windows.Forms.RibbonTab ribbonTabView;
         private System.Windows.Forms.RibbonTab ribbonTabBuild;
         private System.Windows.Forms.RibbonPanel ribbonPnlExecute;
         private System.Windows.Forms.RibbonButton ribbonBtnRun;

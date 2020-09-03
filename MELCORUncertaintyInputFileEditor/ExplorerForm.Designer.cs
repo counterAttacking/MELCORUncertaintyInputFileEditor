@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExplorerForm));
             this.tvwFiles = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
@@ -53,7 +52,6 @@
             this.CloseButton = false;
             this.CloseButtonVisible = false;
             this.Controls.Add(this.tvwFiles);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExplorerForm";
             this.TabText = "Explorer";
             this.ResumeLayout(false);

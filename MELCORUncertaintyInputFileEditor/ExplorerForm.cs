@@ -69,13 +69,20 @@ namespace MELCORUncertaintyInputFileEditor
 
         private void TvwFiles_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            try
+            if (this.tvwFiles.SelectedNode.Parent == null) // SelectedNode is Parent
             {
-                this.frmMain.ViewSelectedFile(e.Node.Name);
+                return;
             }
-            catch (Exception ex)
+            else // SelectedNode is child
             {
-                MessageBox.Show(ex.ToString());
+                try
+                {
+                    this.frmMain.ViewSelectedFile(e.Node.Name);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
 
